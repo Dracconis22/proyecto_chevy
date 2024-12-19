@@ -1,0 +1,495 @@
+:root {
+  --bg_color: #e4e2dd;
+  --text_color: #292929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 300;
+  background-color: #ffffff;
+}
+
+header {
+  background: var(--bg_color);
+  color: var(--text_color);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem; /* Escalable */
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+h3 {
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  letter-spacing: 0.3em;
+}
+
+/*Opción 1: Cambia el color del fondo al pasar el mouse
+header nav ul li a:hover {
+  background-color: #575757; 
+  border-radius: 5px;
+}*/
+
+header nav ul li a:hover {
+  color: #ffffff; 
+}
+
+.title a {
+  padding: 1vh;
+}
+
+.title img{
+  max-width: 200px;
+}
+
+section {
+  padding: 2rem;
+  margin: 5px 0 5px 0;
+  display: grid; 
+  gap: 2em 0em;
+}
+
+section:nth-child(even) {
+  background: #ffffff;
+}
+
+#gallery {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.description {
+  padding: 4vh;
+  text-align: center;
+}
+
+.gallery_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: var(--bg_color);
+}
+
+.gallery_box {
+  flex: 1 1 calc(33.333% - 20px); /* Ocupa un tercio del ancho, menos márgenes */
+  max-height: 80vh;
+  background-color: #ffffff;
+  margin: 0.625rem; /* Separación entre las cajas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  color: var(--text_color);
+}
+
+.gallery_box a {
+  text-decoration: none;
+  color: var(--text_color);
+  letter-spacing: 0.1em;
+}
+
+.gallery_box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+}
+
+#meals {
+  margin-bottom: 2rem; /* Espaciado inferior */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2% 2%;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  align-content: flex-start;;
+  justify-items: center;
+  align-items: center; /*stretch;*/
+  grid-template-areas:
+  "first_meal"
+  "second_meal"
+  "third_meal";
+  background-color: #ffffff;
+}
+
+#first_meal {
+  grid-area: first_meal;
+  background-color: var(--bg_color);
+}
+
+#second_meal {
+  grid-area: second_meal;
+  background-color: var(--bg_color);
+}
+
+#third_meal {
+  grid-area: third_meal;
+  background-color: var(--bg_color);
+}
+
+.meal_container {
+  display: flex;
+  justify-content: space-around; 
+  align-items: stretch; 
+  /* flex-flow: row wrap; */ 
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  height: 100%;
+  padding: 1rem; /*15px;*/
+  gap: 5px;
+}
+
+.meal_container > div {
+  flex: 1;
+  background: #ffffff;
+  /*border: 3px solid #ffcc80;
+  border-radius: 5px;*/
+  padding: 0.8rem;
+  height: auto;
+  max-height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+/*
+.meal_container > div > h2 {
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}*/
+
+.meal_container > div img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+}
+
+.form_container, .register_message {
+  min-height: auto; /* Permite que se ajuste al contenido */
+}
+
+
+#form_section {
+  display: grid;
+  padding: 5em;
+  margin-top: 2rem;
+  grid-template-columns: 1fr 1fr; /* Dos columnas del mismo ancho */
+  grid-template-rows: 1fr; /* Una sola fila */
+  gap: 1em; /* Espaciado entre elementos */
+  grid-auto-flow: row;
+  justify-content: space-between;
+  align-content: stretch;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+  "form_container register_message"; /* Ambos elementos en la misma fila. Es importante que estén dentro de la misma cadena de carácteres*/
+  border: 2em solid #ffffff;
+}
+
+#form_section.container {
+  background-image: url(images/bg_image_focus.jpg);
+}
+
+#form_section.container_blur {
+  background-image: url(images/bg_image_blur.jpg);
+}
+
+.register_message {
+  grid-area: register_message;
+  display: flex; /*¿Es necesario? 📌*/
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  /*border-radius: 8px;*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.register_message h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text_color); /* Azul suave */
+}
+
+/* Contenedor principal */
+.form_container {
+  grid-area: form_container;
+  display: flex; /*¿Es necesario? 📌*/ 
+  width: 100%;
+  max-width: 400px; /* Máximo ancho para que no se estire demasiado en pantallas grandes */
+  background-color: var(--bg_color); /* Fondo blanco para el formulario */
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  padding: 2rem;
+  /*border-radius: 8px;*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+/* Título del formulario */
+.form_container h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text_color); /* Azul suave */
+}
+
+/* Estilo de los controles del formulario */
+.form_control {
+  margin-bottom: 1.2rem;
+}
+
+label {
+display: block;
+font-size: 1rem;
+margin-bottom: 0.5rem;
+color: var(--text_color); /* Azul suave para las etiquetas */
+}
+
+input {
+width: 100%;
+padding: 0.8rem;
+font-size: 1rem;
+border: 1px solid #ccc; /* Borde gris claro */
+border-radius: 4px;
+background-color: #fafafa; /* Fondo gris muy claro */
+color: #333;
+transition: border-color 0.3s ease;/*📌To do: JS*/
+}
+
+input:focus { /* Resalta el borde cuando el input está enfocado */ /*📌To do: JS*/
+border-color: #4a90e2; 
+outline: none; /* Contorno - Se aplica a fuera de los bordes y no altera las dimensiones de los elementos*/
+}
+
+.form_control.success input {
+  border-color: #61cb94;
+}
+
+.form_control.error input {
+  border-color: #bc5f68;
+}
+
+.form_control small {
+  color: #bc5f68; /* Rojo para los mensajes de error */
+  font-size: 0.9rem;
+  visibility: hidden; /* Oculta los mensajes de error por defecto */ /*📌To do: JS*/
+  font-weight: 500;
+}
+
+.form_control.error small {
+  visibility: visible;
+}
+
+button {
+width: 100%;
+padding: 1rem;
+font-size: 1rem;
+background-color: #5f96bc; /* Azul suave */
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer; /* Cambia el cursor a una mano*/ /*📌To do: JS*/
+transition: background-color 0.3s ease; /*📌To do: JS*/
+}
+
+button:hover { /*📌To do: JS*/
+background-color: #3d6f91; /* Azul más oscuro al pasar el ratón */
+}
+
+button:active { /*📌To do: JS*/
+background-color: #35617f; /* Azul más intenso al hacer clic */
+}
+
+/* Media Queries para ser responsivo */
+@media (max-width: 600px) {
+.contenedor {
+  padding: 0.25rem; /* Menos espacio en pantallas pequeñas */
+}
+
+h2 {
+  font-size: 1.3rem; /* Reduce el tamaño del título en pantallas pequeñas */
+}
+  
+.meal_container {
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.meal_container > div {
+  flex: none;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+header nav ul li {
+  display: block;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+input {
+  padding: 0.6rem; /* Ajuste de padding para pantallas más pequeñas */
+}
+
+button {
+  padding: 0.8rem; /* Ajuste de padding para el botón */
+}
+
+}
+/*
+.meal_container {
+  display: flex;  Habilita el modelo Flexbox
+  gap: 20px; /* Espacio entre los div
+  justify-content: center; /* Centra los div horizontalmente
+  align-items: center; /* Alinea los div verticalmente
+  background-color: #f0f0f0; /* Fondo para visualizar mejor
+  height: auto; /* La altura del contenedor se adapta al contenido
+  min-height: 200px; /* Opcional: establece una altura mínima 
+}*/
+
+/*
+.box_1 , .box_2 {
+  background-color: #4caf50;  Fondo del div
+  color: white; /* Color del texto
+  padding: 20px; /* Espaciado interno
+  flex: 1; /* Hace que los div tengan el mismo ancho
+  text-align: center; /* Centra el texto dentro de cada div 
+}*/
+
+/*
+.box_1 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  object-fit: cover;
+}
+*/
+/*
+
+#meal_container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightcoral; /* Temporal para depuración
+}
+
+#meal_container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+#home {
+  display: block;
+}
+
+.gallery_container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cajas se ajusten automáticamente
+  justify-content: space-between; /* Espaciado entre las cajas 
+  background-color: antiquewhite;
+  width: 100%; /* Ocupa todo el ancho 
+  padding: 10px; /* Espaciado interno 
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.gallery_box {
+  flex: 1 1 calc(33.333% - 20px); /* Ocupa un tercio del ancho menos márgenes 
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  margin: 10px; /* Espaciado entre cajas 
+  box-sizing: border-box;
+}
+
+.gallery_box img {
+  width: 100%; 
+  height: auto; /* Mantén la proporción
+  background-color: rosybrown;
+}
+
+.description {
+  padding: 10px 20px;
+  text-align: center;
+}
+*/
+
+/*
+body{
+  padding: 0;
+  margin: 0;
+}
+
+#home {
+  display: block;
+}
+
+.gallery_container {
+  display: flex;
+  flex-direction: row;
+  background-color: antiquewhite;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.gallery_box {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+.gallery_box img {
+  padding: 20px;
+  width: 100%;
+  background-color: rosybrown;
+}
+
+.description {
+  padding: 10px 20px;
+  text-align: center;
+}
+*/

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocinando con Chevy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="header">
+    <nav>
+      <ul>
+        <li><a href="#gallery">Inicio</a></li>
+        <li><a id="refresh" href="#">+ Recetas</a></li>
+        <li><a href="#about_me">Sobre mí</a></li>
+        <li><a href="#form">Registro</a></li>
+      </ul>
+    </nav>
+    <div class="title">
+      <a>
+        <!-- <h1>La cocina de Chevy</h1> -->
+        <img src="images/chevy_logo_1.png" alt="La cocina de Chevy">
+      </a>
+    </div>
+  </header>
+  <main>
+    <section id="gallery">
+      <div class="gallery_container">
+        <div id="first_recipe" class="gallery_box recipe">
+          <a href="#first_meal">
+            <img src="" alt="">
+          </a>
+          <div class="description">
+            <a href="#first_meal">
+              <h2>Receta 1</h2>
+              <strong>Descripción</strong>
+            </a>
+          </div>
+        </div>
+        
+        <div id="second_recipe" class="gallery_box">
+          <a href="#second_meal">
+            <img src="" alt="">
+          </a>
+          <div class="description">
+            <a href="#second_meal">
+              <h2>Receta 2</h2>
+              <strong>Descripción</strong>
+            </a>
+          </div>
+        </div>
+        
+        <div id="third_recipe" class="gallery_box">
+          <a href="#third_meal">
+            <img src="" alt="">
+          </a>
+          <div class="description">
+            <a href="#third_meal">
+              <h2>Receta 3</h2>
+              <strong>Descripción</strong>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <section id="meals" class="container">
+      <div id="first_meal" class="meal_container">
+          <div class="box_1">item 1</div>
+          <div class="box_2">item 2</div>
+      </div>
+      <div id="second_meal" class="meal_container">
+          <div class="box_1">item 1</div>
+          <div class="box_2">item 2</div>
+      </div>
+      <div id="third_meal" class="meal_container">
+          <div class="box_1">item 1</div>
+          <div class="box_2">item 2</div>
+      </div>
+    </section>
+    <section id="form_section" class="container">
+      <div class="form_container">
+        <form id="form" class="form_c">
+            <h2>Crear una cuenta</h2>
+            <div class="form_control"> <!-- div 1 -->
+                <label for="username">Nombre de usuario</label>
+                <input type="text" id="username" placeholder="Ingrese el nombre de usuario">
+                <small>Error message</small>
+            </div> <!-- div 1 -->
+            <div class="form_control"> <!-- div 2 -->
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" placeholder="Ingrese el correo electrónico">
+                <small>Error message</small>
+            </div> <!-- div 2 -->
+            <div class="form_control"> <!-- div 3 -->
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="Ingrese la contraseña">
+                <small>Error message</small>
+            </div> <!-- div 3 -->
+            <div class="form_control"> <!-- div 4 -->
+                <label for="password_2">Confirmar contraseña</label>
+                <input type="password" id="password_2" placeholder="Ingrese la contraseña nuevamente">
+                <small>Error message</small>
+            </div> <!-- div 4 -->
+            <button type="submit">Registrarse</button>
+        </form>
+      </div>
+      <div class="register_message">
+        <div>
+          <h2>Registro de usuario</h2>
+          <p>¿Ya te suscribiste a nuestro NEWLETTER?</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.9.0/validator.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
